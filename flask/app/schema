@@ -1,0 +1,14 @@
+CREATE TABLE Patient_id(
+    id BIGINT PRIMARY KEY,
+    patientname VARCHAR(80) NOT NULL,
+    patientid BIGINT NOT NULL UNIQUE
+);
+
+CREATE TABLE AngleDegree(
+    id BIGINT PRIMARY KEY,
+    patientid_id BIGINT NOT NULL,
+    left_angle_degree FLOAT,
+    right_angle_degree FLOAT,
+    gif BYTEA,
+    FOREIGN KEY (patientid_id) REFERENCES Patient(id)
+);
